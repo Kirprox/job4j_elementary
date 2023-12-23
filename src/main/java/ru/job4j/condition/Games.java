@@ -5,7 +5,7 @@ public class Games {
         if (allowByParent && hasMoney) {
             System.out.println("I can go to the computer club.");
         } else {
-            System.out.println("I can't.");
+            System.out.println("I can't");
         }
     }
 

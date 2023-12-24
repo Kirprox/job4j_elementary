@@ -77,7 +77,7 @@ class LogicNotTest {
 
     @Test
     void whenNotEvenAndPositiveIsTrue() {
-        int num = 2;
+        int num = 3;
         boolean result = LogicNot.notEvenAndPositive(num);
         assertThat(result).isTrue();
     }

@@ -61,7 +61,7 @@ class CounterTest {
     }
 
     @Test
-    void whenSumEvenNumbersFromMinusSixToTenThenTwentyFour() {
+    void whenSumEvenNumbersFromMinusSixToTenThenEighteen() {
         int start = -6;
         int finish = 10;
         int result = Counter.sumByEven(start, finish);

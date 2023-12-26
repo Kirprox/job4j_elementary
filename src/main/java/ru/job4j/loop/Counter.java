@@ -29,6 +29,6 @@ public class Counter {
 
         System.out.println(sumByEven(2, 6));
         System.out.println(sumByEven(-6, 8));
-        System.out.println(sumByEven(1, 9));
+        System.out.println(sumByEven(1, 91));
     }
 }

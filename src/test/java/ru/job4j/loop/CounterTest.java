@@ -65,7 +65,7 @@ class CounterTest {
         int start = -6;
         int finish = 10;
         int result = Counter.sumByEven(start, finish);
-        int expected = 18;
+        int expected = 181;
         assertThat(result).isEqualTo(expected);
     }
 }

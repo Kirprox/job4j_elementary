@@ -18,6 +18,18 @@ class MatrixCheckTest {
     }
 
     @Test
+    public void whenHasNotMonoHorizontal() {
+        char[][] input = {
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+        };
+        int row = 1;
+        boolean result = MatrixCheck.monoHorizontal(input, row);
+        assertThat(result).isFalse();
+    }
+
+    @Test
     public void whenHasMonoVertical() {
         char[][] input = {
                 {' ', ' ', 'X'},
@@ -25,6 +37,18 @@ class MatrixCheckTest {
                 {' ', ' ', 'X'},
         };
         int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void myWhenHasMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 1;
         boolean result = MatrixCheck.monoVertical(input, column);
         assertThat(result).isTrue();
     }
@@ -64,4 +88,56 @@ class MatrixCheckTest {
         char[] expected = {'X', 'Y', 'Z'};
         assertThat(result).containsExactly(expected);
     }
+
+//    @Test
+//    public void whenDataMonoByTrueThenTrue() {
+//        char[][] input = {
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//        };
+//        boolean result = MatrixCheck.isWin(input);
+//        assertThat(result).isTrue();
+//    }
+//
+//    @Test
+//    public void whenDataNotMonoByTrueThenFalse() {
+//        char[][] input = {
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', 'X', ' ', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//        };
+//        boolean result = MatrixCheck.isWin(input);
+//        assertThat(result).isFalse();
+//    }
+//
+//    @Test
+//    public void whenDataHMonoByTrueThenTrue() {
+//        char[][] input = {
+//                {' ', ' ', ' ', ' ', ' '},
+//                {' ', ' ', ' ', ' ', ' '},
+//                {'X', 'X', 'X', 'X', 'X'},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//        };
+//        boolean result = MatrixCheck.isWin(input);
+//        assertThat(result).isTrue();
+//    }
+//
+//    @Test
+//    public void whenDataDiagMonoIsTrueThenFalse() {
+//        char[][] input = {
+//                {'X', ' ', ' ', ' ', ' '},
+//                {' ', 'X', ' ', ' ', ' '},
+//                {' ', ' ', 'X', ' ', ' '},
+//                {' ', ' ', ' ', 'X', ' '},
+//                {' ', ' ', ' ', ' ', 'X'},
+//        };
+//        boolean result = MatrixCheck.isWin(input);
+//        assertThat(result).isFalse();
+//    }
 }

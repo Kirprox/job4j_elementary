@@ -8,7 +8,7 @@ public class Point {
     private int y;
 
     public Point(int first, int second) {
-        this.x = first;
+        this.y = first;
         this.y = second;
     }
 

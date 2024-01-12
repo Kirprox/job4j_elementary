@@ -8,9 +8,9 @@ class PointTest {
 
     @Test
     void when00To20Then2() {
-        double expected = 2;
+        double expected = 0;
         Point a = new Point(0, 0);
-        Point b = new Point(2, 0);
+        Point b = new Point(3, 0);
         double output = a.distance(b);
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }

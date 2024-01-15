@@ -42,4 +42,40 @@ class PointTest {
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 
+    @Test
+    void when200To050Then5Dot385() {
+        double expected = 5.385;
+        Point a = new Point(2, 0, 0);
+        Point b = new Point(0, 5, 0);
+        double output = a.distance(b);
+        assertThat(output).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when111To201Then1Dot414() {
+        double expected = 1.414;
+        Point a = new Point(1, 1, 1);
+        Point b = new Point(2, 0, 1);
+        double output = a.distance(b);
+        assertThat(output).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void whenMinus200To021Then2Dot82() {
+        double expected = 2.82;
+        Point a = new Point(-2, 0, 0);
+        Point b = new Point(0, -2, 1);
+        double output = a.distance(b);
+        assertThat(output).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when000To200Then2() {
+        double expected = 2;
+        Point a = new Point(0, 0, 1);
+        Point b = new Point(2, 0, 1);
+        double output = a.distance(b);
+        assertThat(output).isEqualTo(expected, withPrecision(0.01));
+    }
+
 }

@@ -8,11 +8,13 @@ public class Point {
     private int y;
     private int z;
 
+    // Конструктор для 2D точки
     public Point(int first, int second) {
         this.x = first;
         this.y = second;
     }
 
+    // Конструктор для 3D точки
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
@@ -28,7 +30,16 @@ public class Point {
     }
 
     public void info() {
-        System.out.println("Point[" + this.x + ", " + this.y + "]");
+        if (this.z == 0) {
+            System.out.println("Point[" + this.x + ", " + this.y + "]");
+        } else {
+            System.out.println("Point[" + this.x + ", " + this.y + ", " + this.z + "]");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return (this.z == 0) ? "Point[" + this.x + ", " + this.y + "]" : "Point[" + this.x + ", " + this.y + ", " + this.z + "]";
     }
 
     public static void main(String[] args) {
@@ -37,5 +48,4 @@ public class Point {
         double distance = a.distance(b);
         System.out.println(distance);
     }
-
 }

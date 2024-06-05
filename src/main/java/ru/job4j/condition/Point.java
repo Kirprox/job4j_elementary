@@ -8,13 +8,11 @@ public class Point {
     private int y;
     private int z;
 
-    // Конструктор для 2D точки
     public Point(int first, int second) {
         this.x = first;
         this.y = second;
     }
 
-    // Конструктор для 3D точки
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;

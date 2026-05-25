@@ -14,6 +14,6 @@ public class SquaresOfASortedArray977 {
     }
 
     public static int[] sorted(int[] nums) {
-        return new int[]{1};
+        return nums;
     }
 }

@@ -9,15 +9,39 @@ public class QuickList {
     }
 
     private static <T> void quickSort(List<T> sequence, int start, int end, Comparator<T> comparator) {
+        if (start >= end) {
+            return;
+        }
+        int h = breakPartition(sequence, start, end, comparator);
+        quickSort(sequence, start, h - 1, comparator);
+        quickSort(sequence, h + 1, end, comparator);
         //TODO реализуйте метод
     }
 
     private static <T> int breakPartition(List<T> sequence, int start, int end, Comparator<T> comparator) {
-        //TODO реализуйте метод
-        return 0;
+        int beginToEnd = start + 1;
+        T supportElement = sequence.get(start);
+        int endToBegin = end;
+        while (true) {
+            while (beginToEnd < end && comparator.compare(sequence.get(beginToEnd), supportElement) < 0) {
+                beginToEnd++;
+            }
+            while (comparator.compare(sequence.get(endToBegin), supportElement) > 0) {
+                endToBegin--;
+            }
+            if (beginToEnd >= endToBegin) {
+                break;
+            }
+            swap(sequence, beginToEnd++, endToBegin--);
+        }
+        swap(sequence, start, endToBegin);
+        return endToBegin;
     }
 
-    private static <T> void swap(List<T> array, int i, int j) {
+    private static <T> void swap(List<T> list, int i, int j) {
+        T temp = list.get(i);
+        list.set(i, list.get(j));
+        list.set(j, temp);
         //TODO реализуйте метод
     }
 }
